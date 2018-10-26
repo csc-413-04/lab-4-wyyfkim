@@ -15,6 +15,7 @@ class App extends Component {
     };
     this.buttonHandler = this.buttonHandler.bind(this);
     this.textHandler = this.textHandler.bind(this);
+    console.log(this.props)
   }
 
   buttonHandler() {
@@ -40,15 +41,16 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-          {myVariable}
-          </p> 
-          {myBanner}     
+            {myVariable}
+          </p>
+          {this.props.test}
+
           {
             this.state.isOpen && 
             <Header banner={this.state.banner}/>
           }
           <input value={this.state.banner} onChange={this.textHandler}/>
-          <button onClick={this.buttonHandler} >Click Me</button>
+          <button  onClick={this.buttonHandler} >Click Me</button>
         </header>
       </div>
     );
